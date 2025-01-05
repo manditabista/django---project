@@ -19,5 +19,11 @@ from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include("myApp.urls"))
+]
+from django.urls import path
+from . import views  # Import your views
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('book/', views.book_view, name='book'),  # Add this line if it doesn't exist
 ]
